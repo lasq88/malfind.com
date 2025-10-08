@@ -78,22 +78,34 @@
 }
 
 .prose pre code {
-    background-color: transparent;
+    background-color: transparent !important;
     color: #374151;
     padding: 0;
+    font-family: 'Roboto Mono', 'Monaco', 'Consolas', monospace;
 }
 
 .dark .prose pre code {
     color: #e5e7eb;
 }
 
+/* Ensure code blocks don't inherit prose styles */
+.prose pre,
+.prose pre code,
+.prose code {
+    font-family: 'Roboto Mono', 'Monaco', 'Consolas', monospace !important;
+}
+
 /* Hugo syntax highlighting styles */
-.hljs {
+.hljs,
+pre code,
+code[class*="language-"],
+pre[class*="language-"] {
     background: #1f2937 !important;
     color: #e5e7eb !important;
     padding: 1rem;
     border-radius: 0.5rem;
     overflow-x: auto;
+    font-family: 'Roboto Mono', 'Monaco', 'Consolas', monospace;
 }
 
 .hljs-comment,
@@ -194,6 +206,63 @@
 .light .hljs-keyword,
 .light .hljs-selector-tag {
     color: #2563eb;
+}
+
+/* Additional Hugo syntax highlighting classes */
+.chroma {
+    background: #1f2937 !important;
+    color: #e5e7eb !important;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    font-family: 'Roboto Mono', 'Monaco', 'Consolas', monospace;
+}
+
+.light .chroma {
+    background: #f8fafc !important;
+    color: #374151 !important;
+}
+
+/* Specific syntax highlighting for different languages */
+.chroma .c, .chroma .cm, .chroma .c1, .chroma .cs {
+    color: #6a9955; /* Comments */
+}
+
+.chroma .k, .chroma .kc, .chroma .kd, .chroma .kn, .chroma .kp, .chroma .kr, .chroma .kt {
+    color: #569cd6; /* Keywords */
+}
+
+.chroma .s, .chroma .sa, .chroma .sb, .chroma .sc, .chroma .dl, .chroma .sd, .chroma .s2, .chroma .se, .chroma .sh, .chroma .si, .chroma .sx, .chroma .sr, .chroma .s1, .chroma .ss {
+    color: #ce9178; /* Strings */
+}
+
+.chroma .n, .chroma .na, .chroma .nb, .chroma .bp, .chroma .nc, .chroma .no, .chroma .nd, .chroma .ni, .chroma .ne, .chroma .nf, .chroma .fm, .chroma .nl, .chroma .nn, .chroma .nx, .chroma .py, .chroma .nt, .chroma .nv, .chroma .vc, .chroma .vg, .chroma .vi, .chroma .vm {
+    color: #9cdcfe; /* Names */
+}
+
+.chroma .m, .chroma .mb, .chroma .mf, .chroma .mh, .chroma .mi, .chroma .il, .chroma .mo, .chroma .mx {
+    color: #b5cea8; /* Numbers */
+}
+
+/* Light theme chroma styles */
+.light .chroma .c, .light .chroma .cm, .light .chroma .c1, .light .chroma .cs {
+    color: #6a9955;
+}
+
+.light .chroma .k, .light .chroma .kc, .light .chroma .kd, .light .chroma .kn, .light .chroma .kp, .light .chroma .kr, .light .chroma .kt {
+    color: #2563eb;
+}
+
+.light .chroma .s, .light .chroma .sa, .light .chroma .sb, .light .chroma .sc, .light .chroma .dl, .light .chroma .sd, .light .chroma .s2, .light .chroma .se, .light .chroma .sh, .light .chroma .si, .light .chroma .sx, .light .chroma .sr, .light .chroma .s1, .light .chroma .ss {
+    color: #dc2626;
+}
+
+.light .chroma .n, .light .chroma .na, .light .chroma .nb, .light .chroma .bp, .light .chroma .nc, .light .chroma .no, .light .chroma .nd, .light .chroma .ni, .light .chroma .ne, .light .chroma .nf, .light .chroma .fm, .light .chroma .nl, .light .chroma .nn, .light .chroma .nx, .light .chroma .py, .light .chroma .nt, .light .chroma .nv, .light .chroma .vc, .light .chroma .vg, .light .chroma .vi, .light .chroma .vm {
+    color: #111827;
+}
+
+.light .chroma .m, .light .chroma .mb, .light .chroma .mf, .light .chroma .mh, .light .chroma .mi, .light .chroma .il, .light .chroma .mo, .light .chroma .mx {
+    color: #059669;
 }
 
 .prose blockquote {
