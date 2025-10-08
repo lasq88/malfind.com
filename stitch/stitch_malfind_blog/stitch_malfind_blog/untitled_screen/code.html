@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Malfind Labs - Malware Analysis &amp; AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#FCA5A5", // red-300
+                    "background-light": "#F9FAFB",
+                    "background-dark": "#111827",
+                    "accent-red": "#FCA5A5",
+                },
+                fontFamily: {
+                    display: ["Inter", "sans-serif"],
+                    mono: ["Roboto Mono", "monospace"],
+                },
+                borderRadius: {
+                    DEFAULT: "0.5rem", // 8px
+                },
+            },
+        },
+    };
+    </script>
+<style>
+        .material-icons {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-gray-200 font-display">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<header class="flex justify-between items-center py-8">
+<a class="flex items-center space-x-3 group" href="#">
+<span class="material-icons text-accent-red text-3xl group-hover:animate-pulse">bug_report</span>
+<span class="text-2xl font-bold text-white">Malfind Labs</span>
+</a>
+<nav class="flex items-center space-x-6 text-lg">
+<a class="text-gray-300 hover:text-accent-red transition-colors" href="#">Home</a>
+<a class="text-gray-300 hover:text-accent-red transition-colors" href="#">About</a>
+<button class="text-gray-300 hover:text-accent-red transition-colors" id="theme-toggle">
+<span class="material-icons" id="theme-icon">dark_mode</span>
+</button>
+</nav>
+</header>
+<main class="py-8">
+<section class="text-center mb-16">
+<h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Exploring the intersection of malware analysis and artificial intelligence.</h1>
+<p class="text-xl text-gray-400">A blog dedicated to the latest research, tools, and techniques.</p>
+</section>
+<div class="mb-12">
+<div class="relative">
+<span class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-accent-red transition-colors duration-200 text-gray-100 placeholder-gray-400" placeholder="Search posts..." type="search"/>
+</div>
+</div>
+<div class="space-y-12">
+<article class="group">
+<div class="flex flex-col md:flex-row md:items-start md:space-x-8">
+<div class="flex-grow">
+<p class="text-sm text-gray-400 mb-2">January 12, 2024</p>
+<h2 class="text-2xl font-bold mb-3">
+<a class="text-white group-hover:text-accent-red transition-colors" href="#">AI-Powered Malware Detection: Machine Learning Approaches</a>
+</h2>
+<p class="text-gray-300 mb-4">
+                                Exploring machine learning techniques for automated malware detection and classification. A deep dive into neural networks, random forests, and their application in cybersecurity.
+                            </p>
+<div class="flex space-x-2">
+<span class="bg-accent-red/10 text-accent-red text-xs font-mono font-medium px-2.5 py-1 rounded-full">ai</span>
+<span class="bg-gray-700 text-gray-300 text-xs font-mono font-medium px-2.5 py-1 rounded-full">malware-analysis</span>
+</div>
+</div>
+</div>
+</article>
+<article class="group">
+<div class="flex flex-col md:flex-row md:items-start md:space-x-8">
+<div class="flex-grow">
+<p class="text-sm text-gray-400 mb-2">January 10, 2024</p>
+<h2 class="text-2xl font-bold mb-3">
+<a class="text-white group-hover:text-accent-red transition-colors" href="#">Introduction to Malware Analysis: A Practical Guide</a>
+</h2>
+<p class="text-gray-300 mb-4">
+                                A comprehensive introduction to malware analysis techniques, tools, and methodologies for security researchers. Covering static and dynamic analysis from the ground up.
+                            </p>
+<div class="flex space-x-2">
+<span class="bg-gray-700 text-gray-300 text-xs font-mono font-medium px-2.5 py-1 rounded-full">malware-analysis</span>
+</div>
+</div>
+</div>
+</article>
+<article class="group">
+<div class="flex flex-col md:flex-row md:items-start md:space-x-8">
+<div class="flex-grow">
+<p class="text-sm text-gray-400 mb-2">December 28, 2023</p>
+<h2 class="text-2xl font-bold mb-3">
+<a class="text-white group-hover:text-accent-red transition-colors" href="#">Reverse Engineering Shellcode: A Beginner's Tutorial</a>
+</h2>
+<p class="text-gray-300 mb-4">
+                                Learn the fundamentals of reverse engineering by dissecting a simple piece of shellcode. We'll use popular tools like IDA Pro and Ghidra to understand its functionality.
+                            </p>
+<div class="flex space-x-2">
+<span class="bg-gray-700 text-gray-300 text-xs font-mono font-medium px-2.5 py-1 rounded-full">reverse-engineering</span>
+<span class="bg-gray-700 text-gray-300 text-xs font-mono font-medium px-2.5 py-1 rounded-full">malware-analysis</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<div class="flex justify-center mt-16">
+<nav aria-label="Pagination" class="flex items-center space-x-2">
+<a class="relative inline-flex items-center px-2 py-2 rounded-md bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-accent-red" href="#">
+<span class="material-icons text-xl">chevron_left</span>
+</a>
+<a aria-current="page" class="relative inline-flex items-center px-4 py-2 rounded-md bg-accent-red text-sm font-medium text-gray-900" href="#">1</a>
+<a class="relative inline-flex items-center px-4 py-2 rounded-md bg-gray-800 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-accent-red" href="#">2</a>
+<a class="relative inline-flex items-center px-4 py-2 rounded-md bg-gray-800 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-accent-red" href="#">3</a>
+<a class="relative inline-flex items-center px-2 py-2 rounded-md bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-accent-red" href="#">
+<span class="material-icons text-xl">chevron_right</span>
+</a>
+</nav>
+</div>
+</main>
+<footer class="text-center py-8 mt-12 border-t border-gray-800">
+<p class="text-gray-400">© 2024 Malfind Labs. All Rights Reserved.</p>
+</footer>
+</div>
+<script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const htmlEl = document.documentElement;
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlEl.classList.add('dark');
+            themeIcon.textContent = 'dark_mode';
+        } else {
+            htmlEl.classList.remove('dark');
+            themeIcon.textContent = 'light_mode';
+        }
+        themeToggle.addEventListener('click', function() {
+            htmlEl.classList.toggle('dark');
+            const isDark = htmlEl.classList.contains('dark');
+            if (isDark) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.textContent = 'dark_mode';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.textContent = 'light_mode';
+            }
+        });
+    </script>
+</body></html>

@@ -1,34 +1,29 @@
 {{ define "main" }}
-<div class="taxonomy">
-    <header class="taxonomy-header">
-        <h1>Tag: {{ .Title }}</h1>
-        <p>{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }} with this tag</p>
-    </header>
-    
-    <div class="posts">
-        {{- range .Pages }}
-        <article class="post-entry">
-            <header class="entry-header">
-                <h2>
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+<section class="text-center mb-16">
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Tag: {{ .Title }}</h1>
+    <p class="text-xl text-gray-400">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }} with this tag</p>
+</section>
+
+<div class="space-y-12">
+    {{- range .Pages }}
+    <article class="group">
+        <div class="flex flex-col md:flex-row md:items-start md:space-x-8">
+            <div class="flex-grow">
+                <p class="text-sm text-gray-400 mb-2">{{ .Date.Format "January 2, 2006" }}</p>
+                <h2 class="text-2xl font-bold mb-3">
+                    <a class="text-white group-hover:text-accent-red transition-colors" href="{{ .Permalink }}">{{ .Title }}</a>
                 </h2>
-            </header>
-            <div class="entry-content">
-                <p>{{ .Summary }}</p>
-            </div>
-            <footer class="entry-footer">
-                <time>{{ .Date.Format "January 2, 2006" }}</time>
-                {{- if .Params.categories }}
-                <span class="categories">
+                <p class="text-gray-300 mb-4">{{ .Summary }}</p>
+                <div class="flex space-x-2">
+                    {{- if .Params.categories }}
                     {{- range .Params.categories }}
-                    <a href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+                    <span class="bg-gray-700 text-gray-300 text-xs font-mono font-medium px-2.5 py-1 rounded-full">{{ . }}</span>
                     {{- end }}
-                </span>
-                {{- end }}
-            </footer>
-        </article>
-        {{- end }}
-    </div>
+                    {{- end }}
+                </div>
+            </div>
+        </div>
+    </article>
+    {{- end }}
 </div>
 {{ end }}
-

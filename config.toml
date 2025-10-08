@@ -36,9 +36,9 @@ theme = 'PaperMod'
   
   # Post configuration
   showReadingTime = true
-  showShareButtons = true
-  showPostNavLinks = true
-  showBreadCrumbs = true
+  showShareButtons = false
+  showPostNavLinks = false
+  showBreadCrumbs = false
   showCodeCopyButtons = true
   
   # Menu configuration
