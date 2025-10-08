@@ -57,6 +57,13 @@
     color: #e5e7eb !important;
 }
 
+/* Ensure accent red color is preserved in both themes */
+.text-accent-red,
+:not(.dark) .text-accent-red,
+.dark .text-accent-red {
+    color: #FCA5A5 !important;
+}
+
 :not(.dark) .prose h1, 
 :not(.dark) .prose h2, 
 :not(.dark) .prose h3, 
