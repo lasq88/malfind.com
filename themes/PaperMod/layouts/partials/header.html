@@ -1,13 +1,13 @@
 <header class="flex justify-between items-center py-8">
     <a class="flex items-center space-x-3 group" href="{{ "/" | relURL }}">
         <span class="material-icons text-accent-red text-3xl group-hover:animate-pulse">bug_report</span>
-        <span class="text-2xl font-bold text-white">{{ .Site.Title }}</span>
+        <span class="text-2xl font-bold text-gray-900 dark:text-white">{{ .Site.Title }}</span>
     </a>
     <nav class="flex items-center space-x-6 text-lg">
-        <a class="text-gray-300 hover:text-accent-red transition-colors" href="{{ "/" | relURL }}">Home</a>
-        <a class="text-gray-300 hover:text-accent-red transition-colors" href="{{ "/about/" | relURL }}">About</a>
-        <button class="text-gray-300 hover:text-accent-red transition-colors" id="theme-toggle">
-            <span class="material-icons" id="theme-icon">dark_mode</span>
+        <a class="text-gray-600 dark:text-gray-300 hover:text-accent-red transition-colors" href="{{ "/" | relURL }}">Home</a>
+        <a class="text-gray-600 dark:text-gray-300 hover:text-accent-red transition-colors" href="{{ "/about/" | relURL }}">About</a>
+        <button class="text-gray-600 dark:text-gray-300 hover:text-accent-red transition-colors" id="theme-toggle">
+            <span class="material-icons" id="theme-icon">light_mode</span>
         </button>
     </nav>
 </header>

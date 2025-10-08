@@ -1,14 +1,14 @@
 {{ define "main" }}
 <section class="text-center mb-16">
-    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">{{ .Site.Params.homeInfoParams.Title | default "Exploring the intersection of malware analysis and artificial intelligence." }}</h1>
-    <p class="text-xl text-gray-400">{{ .Site.Params.homeInfoParams.Content | default "A blog dedicated to the latest research, tools, and techniques." }}</p>
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">{{ .Site.Params.homeInfoParams.Title | default "Exploring the intersection of malware analysis and artificial intelligence." }}</h1>
+    <p class="text-xl text-gray-600 dark:text-gray-400">{{ .Site.Params.homeInfoParams.Content | default "A blog dedicated to the latest research, tools, and techniques." }}</p>
 </section>
 
 {{ if .Site.Params.search }}
 <div class="mb-12">
     <div class="relative">
         <span class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">search</span>
-        <input id="search-input" class="w-full pl-12 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-accent-red transition-colors duration-200 text-gray-100 placeholder-gray-400" placeholder="Search posts..." type="search"/>
+        <input id="search-input" class="w-full pl-12 pr-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-accent-red transition-colors duration-200 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400" placeholder="Search posts..." type="search"/>
     </div>
     <div id="search-results" class="mt-4"></div>
 </div>
@@ -21,20 +21,20 @@
     <article class="group">
         <div class="flex flex-col md:flex-row md:items-start md:space-x-8">
             <div class="flex-grow">
-                <p class="text-sm text-gray-400 mb-2">{{ .Date.Format "January 2, 2006" }}</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">{{ .Date.Format "January 2, 2006" }}</p>
                 <h2 class="text-2xl font-bold mb-3">
-                    <a class="text-white group-hover:text-accent-red transition-colors" href="{{ .Permalink }}">{{ .Title }}</a>
+                    <a class="text-gray-900 dark:text-white group-hover:text-accent-red transition-colors" href="{{ .Permalink }}">{{ .Title }}</a>
                 </h2>
-                <p class="text-gray-300 mb-4">{{ .Summary }}</p>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">{{ .Summary }}</p>
                 <div class="flex space-x-2">
                     {{- if .Params.categories }}
                     {{- range .Params.categories }}
-                    <span class="bg-gray-700 text-gray-300 text-xs font-mono font-medium px-2.5 py-1 rounded-full">{{ . }}</span>
+                    <a href="{{ "categories/" | relURL }}{{ . | urlize }}" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-mono font-medium px-2.5 py-1 rounded-full hover:bg-accent-red/10 hover:text-accent-red transition-colors">{{ . }}</a>
                     {{- end }}
                     {{- end }}
                     {{- if .Params.tags }}
                     {{- range .Params.tags }}
-                    <span class="bg-accent-red/10 text-accent-red text-xs font-mono font-medium px-2.5 py-1 rounded-full">{{ . }}</span>
+                    <a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="bg-accent-red/10 text-accent-red text-xs font-mono font-medium px-2.5 py-1 rounded-full hover:bg-accent-red/20 transition-colors">{{ . }}</a>
                     {{- end }}
                     {{- end }}
                 </div>
@@ -48,17 +48,17 @@
 <div class="flex justify-center mt-16">
     <nav aria-label="Pagination" class="flex items-center space-x-2">
         {{- if $paginator.HasPrev }}
-        <a class="relative inline-flex items-center px-2 py-2 rounded-md bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-accent-red" href="{{ $paginator.Prev.URL }}">
+        <a class="relative inline-flex items-center px-2 py-2 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-accent-red transition-colors" href="{{ $paginator.Prev.URL }}">
             <span class="material-icons text-xl">chevron_left</span>
         </a>
         {{- end }}
         
         {{- range $paginator.Pagers }}
-        <a class="relative inline-flex items-center px-4 py-2 rounded-md {{ if eq . $paginator }}bg-accent-red text-sm font-medium text-gray-900{{ else }}bg-gray-800 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-accent-red{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
+        <a class="relative inline-flex items-center px-4 py-2 rounded-md {{ if eq . $paginator }}bg-accent-red text-sm font-medium text-white{{ else }}bg-gray-100 dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-accent-red transition-colors{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
         {{- end }}
         
         {{- if $paginator.HasNext }}
-        <a class="relative inline-flex items-center px-2 py-2 rounded-md bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-accent-red" href="{{ $paginator.Next.URL }}">
+        <a class="relative inline-flex items-center px-2 py-2 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-accent-red transition-colors" href="{{ $paginator.Next.URL }}">
             <span class="material-icons text-xl">chevron_right</span>
         </a>
         {{- end }}

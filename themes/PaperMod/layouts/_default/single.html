@@ -1,11 +1,11 @@
 {{ define "main" }}
 <article class="max-w-3xl mx-auto">
     <header class="mb-8">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">{{ .Title }}</h1>
-        <div class="flex items-center space-x-4 text-gray-400 mb-6">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">{{ .Title }}</h1>
+        <div class="flex items-center space-x-4 text-gray-500 dark:text-gray-400 mb-6">
             <time>{{ .Date.Format "January 2, 2006" }}</time>
             {{- if .Params.categories }}
-            <span class="text-gray-500">•</span>
+            <span class="text-gray-400 dark:text-gray-500">•</span>
             <div class="flex space-x-2">
                 {{- range .Params.categories }}
                 <a href="{{ "categories/" | relURL }}{{ . | urlize }}" class="text-accent-red hover:underline">{{ . }}</a>
@@ -16,7 +16,7 @@
         {{- if .Params.tags }}
         <div class="flex flex-wrap gap-2 mb-6">
             {{- range .Params.tags }}
-            <span class="bg-accent-red/10 text-accent-red text-xs font-mono font-medium px-2.5 py-1 rounded-full">{{ . }}</span>
+            <a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="bg-accent-red/10 text-accent-red text-xs font-mono font-medium px-2.5 py-1 rounded-full hover:bg-accent-red/20 transition-colors">{{ . }}</a>
             {{- end }}
         </div>
         {{- end }}
@@ -26,13 +26,13 @@
         {{ .Content }}
     </div>
     
-    <footer class="mt-12 pt-8 border-t border-gray-800">
+    <footer class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
         {{- if .Params.tags }}
         <div class="mb-4">
-            <h3 class="text-lg font-semibold text-white mb-2">Tags:</h3>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Tags:</h3>
             <div class="flex flex-wrap gap-2">
                 {{- range .Params.tags }}
-                <a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="bg-gray-700 text-gray-300 text-sm font-mono font-medium px-3 py-1 rounded-full hover:bg-accent-red/10 hover:text-accent-red transition-colors">{{ . }}</a>
+                <a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-mono font-medium px-3 py-1 rounded-full hover:bg-accent-red/10 hover:text-accent-red transition-colors">{{ . }}</a>
                 {{- end }}
             </div>
         </div>

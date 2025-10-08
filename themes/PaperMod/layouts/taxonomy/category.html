@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="text-center mb-16">
-    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Category: {{ .Title }}</h1>
-    <p class="text-xl text-gray-400">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }} in this category</p>
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Category: {{ .Title }}</h1>
+    <p class="text-xl text-gray-600 dark:text-gray-400">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }} in this category</p>
 </section>
 
 <div class="space-y-12">
@@ -9,11 +9,11 @@
     <article class="group">
         <div class="flex flex-col md:flex-row md:items-start md:space-x-8">
             <div class="flex-grow">
-                <p class="text-sm text-gray-400 mb-2">{{ .Date.Format "January 2, 2006" }}</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">{{ .Date.Format "January 2, 2006" }}</p>
                 <h2 class="text-2xl font-bold mb-3">
-                    <a class="text-white group-hover:text-accent-red transition-colors" href="{{ .Permalink }}">{{ .Title }}</a>
+                    <a class="text-gray-900 dark:text-white group-hover:text-accent-red transition-colors" href="{{ .Permalink }}">{{ .Title }}</a>
                 </h2>
-                <p class="text-gray-300 mb-4">{{ .Summary }}</p>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">{{ .Summary }}</p>
                 <div class="flex space-x-2">
                     {{- if .Params.tags }}
                     {{- range .Params.tags }}

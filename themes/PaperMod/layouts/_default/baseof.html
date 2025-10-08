@@ -48,7 +48,7 @@
         }
     </style>
 </head>
-<body class="bg-background-dark text-gray-200 font-display">
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-display transition-colors duration-300">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {{- partial "header.html" . -}}
         <main class="py-8">
@@ -86,7 +86,7 @@
                 
                 const results = searchIndex.filter(item => 
                     item.title.toLowerCase().includes(query) ||
-                    item.content.toLowerCase().includes(query) ||
+                    (item.content && item.content.toLowerCase().includes(query)) ||
                     (item.tags && item.tags.some(tag => tag.toLowerCase().includes(query)))
                 );
                 
@@ -95,17 +95,17 @@
             
             function displayResults(results) {
                 if (results.length === 0) {
-                    searchResults.innerHTML = '<p class="text-gray-400">No results found.</p>';
+                    searchResults.innerHTML = '<p class="text-gray-500 dark:text-gray-400">No results found.</p>';
                     return;
                 }
                 
                 const html = results.map(result => `
-                    <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+                    <div class="bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-4">
                         <h3 class="text-accent-red text-lg font-semibold mb-2">
                             <a href="${result.permalink}" class="hover:underline">${result.title}</a>
                         </h3>
-                        <p class="text-gray-300 mb-2">${result.summary}</p>
-                        <div class="flex gap-2 text-sm text-gray-400">
+                        <p class="text-gray-600 dark:text-gray-300 mb-2">${result.summary || result.content.substring(0, 150) + '...'}</p>
+                        <div class="flex gap-2 text-sm text-gray-500 dark:text-gray-400">
                             <time>${new Date(result.date).toLocaleDateString()}</time>
                             ${result.tags ? `<span class="tags">${result.tags.map(tag => `<a href="/tags/${tag.toLowerCase()}" class="text-accent-red hover:underline">${tag}</a>`).join(', ')}</span>` : ''}
                         </div>

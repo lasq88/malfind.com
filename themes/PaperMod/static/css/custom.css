@@ -2,12 +2,20 @@
 
 /* Prose styling for content */
 .prose {
+    color: #374151;
+}
+
+.dark .prose {
     color: #e5e7eb;
 }
 
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-    color: #ffffff;
+    color: #111827;
     font-weight: 600;
+}
+
+.dark .prose h1, .dark .prose h2, .dark .prose h3, .dark .prose h4, .dark .prose h5, .dark .prose h6 {
+    color: #ffffff;
 }
 
 .prose h1 {
@@ -43,26 +51,40 @@
 }
 
 .prose code {
-    background-color: #374151;
-    color: #FCA5A5;
+    background-color: #f3f4f6;
+    color: #dc2626;
     padding: 0.125rem 0.25rem;
     border-radius: 0.25rem;
     font-size: 0.875rem;
 }
 
+.dark .prose code {
+    background-color: #374151;
+    color: #FCA5A5;
+}
+
 .prose pre {
-    background-color: #1f2937;
-    border: 1px solid #374151;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 0.5rem;
     padding: 1rem;
     overflow-x: auto;
     margin: 1rem 0;
 }
 
+.dark .prose pre {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+}
+
 .prose pre code {
     background-color: transparent;
-    color: #e5e7eb;
+    color: #374151;
     padding: 0;
+}
+
+.dark .prose pre code {
+    color: #e5e7eb;
 }
 
 .prose blockquote {
