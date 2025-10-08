@@ -23,6 +23,23 @@
     color: #374151 !important;
 }
 
+/* Additional light theme overrides for any missed elements */
+:not(.dark) body {
+    color: #374151 !important;
+}
+
+:not(.dark) p {
+    color: #374151 !important;
+}
+
+:not(.dark) li {
+    color: #374151 !important;
+}
+
+:not(.dark) span {
+    color: #374151 !important;
+}
+
 :not(.dark) .prose h1, 
 :not(.dark) .prose h2, 
 :not(.dark) .prose h3, 
@@ -222,7 +239,7 @@ pre[class*="language-"] {
 /* Light theme syntax highlighting - more specific selectors */
 :not(.dark) .hljs {
     background: #f8fafc !important;
-    color: #374151 !important;
+    color: #1f2937 !important;
 }
 
 :not(.dark) .hljs-comment,
@@ -356,7 +373,7 @@ pre[class*="language-"] {
 /* Light theme chroma styles - more specific selectors */
 :not(.dark) .chroma {
     background: #f8fafc !important;
-    color: #374151 !important;
+    color: #1f2937 !important;
 }
 
 :not(.dark) .chroma .c, 
