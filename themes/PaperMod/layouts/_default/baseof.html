@@ -19,7 +19,9 @@
             {{- block "main" . }}{{- end }}
         </main>
         {{- partialCached "footer.html" . .Type .Layout .Params.hideFooter -}}
+        {{- if templates.Exists "partials/extended_footer.html" -}}
         {{- partialCached "extended_footer.html" . .Page -}}
+        {{- end -}}
     </body>
 </html>
 
