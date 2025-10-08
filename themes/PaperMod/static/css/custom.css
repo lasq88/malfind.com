@@ -18,6 +18,36 @@
     color: #ffffff;
 }
 
+/* Ensure light theme text is always dark */
+:not(.dark) .prose {
+    color: #374151 !important;
+}
+
+:not(.dark) .prose h1, 
+:not(.dark) .prose h2, 
+:not(.dark) .prose h3, 
+:not(.dark) .prose h4, 
+:not(.dark) .prose h5, 
+:not(.dark) .prose h6 {
+    color: #111827 !important;
+}
+
+:not(.dark) .prose p {
+    color: #374151 !important;
+}
+
+:not(.dark) .prose li {
+    color: #374151 !important;
+}
+
+:not(.dark) .prose strong {
+    color: #111827 !important;
+}
+
+:not(.dark) .prose em {
+    color: #374151 !important;
+}
+
 .prose h1 {
     font-size: 2.25rem;
     margin-top: 2rem;
@@ -159,53 +189,53 @@ pre[class*="language-"] {
     font-weight: bold;
 }
 
-/* Light theme syntax highlighting */
-.light .hljs {
+/* Light theme syntax highlighting - more specific selectors */
+:not(.dark) .hljs {
     background: #f8fafc !important;
     color: #374151 !important;
 }
 
-.light .hljs-comment,
-.light .hljs-quote {
-    color: #6a9955;
+:not(.dark) .hljs-comment,
+:not(.dark) .hljs-quote {
+    color: #6a9955 !important;
 }
 
-.light .hljs-variable,
-.light .hljs-template-variable,
-.light .hljs-attribute,
-.light .hljs-tag,
-.light .hljs-name,
-.light .hljs-regexp,
-.light .hljs-link,
-.light .hljs-selector-id,
-.light .hljs-selector-class {
-    color: #dc2626;
+:not(.dark) .hljs-variable,
+:not(.dark) .hljs-template-variable,
+:not(.dark) .hljs-attribute,
+:not(.dark) .hljs-tag,
+:not(.dark) .hljs-name,
+:not(.dark) .hljs-regexp,
+:not(.dark) .hljs-link,
+:not(.dark) .hljs-selector-id,
+:not(.dark) .hljs-selector-class {
+    color: #dc2626 !important;
 }
 
-.light .hljs-number,
-.light .hljs-meta,
-.light .hljs-built_in,
-.light .hljs-builtin-name,
-.light .hljs-literal,
-.light .hljs-type,
-.light .hljs-params {
-    color: #059669;
+:not(.dark) .hljs-number,
+:not(.dark) .hljs-meta,
+:not(.dark) .hljs-built_in,
+:not(.dark) .hljs-builtin-name,
+:not(.dark) .hljs-literal,
+:not(.dark) .hljs-type,
+:not(.dark) .hljs-params {
+    color: #059669 !important;
 }
 
-.light .hljs-string,
-.light .hljs-symbol,
-.light .hljs-bullet {
-    color: #dc2626;
+:not(.dark) .hljs-string,
+:not(.dark) .hljs-symbol,
+:not(.dark) .hljs-bullet {
+    color: #dc2626 !important;
 }
 
-.light .hljs-title,
-.light .hljs-section {
-    color: #7c3aed;
+:not(.dark) .hljs-title,
+:not(.dark) .hljs-section {
+    color: #7c3aed !important;
 }
 
-.light .hljs-keyword,
-.light .hljs-selector-tag {
-    color: #2563eb;
+:not(.dark) .hljs-keyword,
+:not(.dark) .hljs-selector-tag {
+    color: #2563eb !important;
 }
 
 /* Additional Hugo syntax highlighting classes */
@@ -244,25 +274,79 @@ pre[class*="language-"] {
     color: #b5cea8; /* Numbers */
 }
 
-/* Light theme chroma styles */
-.light .chroma .c, .light .chroma .cm, .light .chroma .c1, .light .chroma .cs {
-    color: #6a9955;
+/* Light theme chroma styles - more specific selectors */
+:not(.dark) .chroma {
+    background: #f8fafc !important;
+    color: #374151 !important;
 }
 
-.light .chroma .k, .light .chroma .kc, .light .chroma .kd, .light .chroma .kn, .light .chroma .kp, .light .chroma .kr, .light .chroma .kt {
-    color: #2563eb;
+:not(.dark) .chroma .c, 
+:not(.dark) .chroma .cm, 
+:not(.dark) .chroma .c1, 
+:not(.dark) .chroma .cs {
+    color: #6a9955 !important;
 }
 
-.light .chroma .s, .light .chroma .sa, .light .chroma .sb, .light .chroma .sc, .light .chroma .dl, .light .chroma .sd, .light .chroma .s2, .light .chroma .se, .light .chroma .sh, .light .chroma .si, .light .chroma .sx, .light .chroma .sr, .light .chroma .s1, .light .chroma .ss {
-    color: #dc2626;
+:not(.dark) .chroma .k, 
+:not(.dark) .chroma .kc, 
+:not(.dark) .chroma .kd, 
+:not(.dark) .chroma .kn, 
+:not(.dark) .chroma .kp, 
+:not(.dark) .chroma .kr, 
+:not(.dark) .chroma .kt {
+    color: #2563eb !important;
 }
 
-.light .chroma .n, .light .chroma .na, .light .chroma .nb, .light .chroma .bp, .light .chroma .nc, .light .chroma .no, .light .chroma .nd, .light .chroma .ni, .light .chroma .ne, .light .chroma .nf, .light .chroma .fm, .light .chroma .nl, .light .chroma .nn, .light .chroma .nx, .light .chroma .py, .light .chroma .nt, .light .chroma .nv, .light .chroma .vc, .light .chroma .vg, .light .chroma .vi, .light .chroma .vm {
-    color: #111827;
+:not(.dark) .chroma .s, 
+:not(.dark) .chroma .sa, 
+:not(.dark) .chroma .sb, 
+:not(.dark) .chroma .sc, 
+:not(.dark) .chroma .dl, 
+:not(.dark) .chroma .sd, 
+:not(.dark) .chroma .s2, 
+:not(.dark) .chroma .se, 
+:not(.dark) .chroma .sh, 
+:not(.dark) .chroma .si, 
+:not(.dark) .chroma .sx, 
+:not(.dark) .chroma .sr, 
+:not(.dark) .chroma .s1, 
+:not(.dark) .chroma .ss {
+    color: #dc2626 !important;
 }
 
-.light .chroma .m, .light .chroma .mb, .light .chroma .mf, .light .chroma .mh, .light .chroma .mi, .light .chroma .il, .light .chroma .mo, .light .chroma .mx {
-    color: #059669;
+:not(.dark) .chroma .n, 
+:not(.dark) .chroma .na, 
+:not(.dark) .chroma .nb, 
+:not(.dark) .chroma .bp, 
+:not(.dark) .chroma .nc, 
+:not(.dark) .chroma .no, 
+:not(.dark) .chroma .nd, 
+:not(.dark) .chroma .ni, 
+:not(.dark) .chroma .ne, 
+:not(.dark) .chroma .nf, 
+:not(.dark) .chroma .fm, 
+:not(.dark) .chroma .nl, 
+:not(.dark) .chroma .nn, 
+:not(.dark) .chroma .nx, 
+:not(.dark) .chroma .py, 
+:not(.dark) .chroma .nt, 
+:not(.dark) .chroma .nv, 
+:not(.dark) .chroma .vc, 
+:not(.dark) .chroma .vg, 
+:not(.dark) .chroma .vi, 
+:not(.dark) .chroma .vm {
+    color: #111827 !important;
+}
+
+:not(.dark) .chroma .m, 
+:not(.dark) .chroma .mb, 
+:not(.dark) .chroma .mf, 
+:not(.dark) .chroma .mh, 
+:not(.dark) .chroma .mi, 
+:not(.dark) .chroma .il, 
+:not(.dark) .chroma .mo, 
+:not(.dark) .chroma .mx {
+    color: #059669 !important;
 }
 
 .prose blockquote {
