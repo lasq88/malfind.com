@@ -70,11 +70,27 @@
             
             // Load search index
             fetch('/index.json')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Search index not found');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     searchIndex = data;
+                    console.log('Search index loaded:', searchIndex.length, 'items');
                 })
-                .catch(error => console.error('Error loading search index:', error));
+                .catch(error => {
+                    console.error('Error loading search index:', error);
+                    // Fallback: try to load from posts directly
+                    fetch('/posts/index.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            searchIndex = data;
+                            console.log('Fallback search index loaded:', searchIndex.length, 'items');
+                        })
+                        .catch(err => console.error('Fallback search also failed:', err));
+                });
             
             searchInput.addEventListener('input', function(e) {
                 const query = e.target.value.toLowerCase();
@@ -84,12 +100,15 @@
                     return;
                 }
                 
+                console.log('Searching for:', query, 'in', searchIndex.length, 'items');
+                
                 const results = searchIndex.filter(item => 
                     item.title.toLowerCase().includes(query) ||
                     (item.content && item.content.toLowerCase().includes(query)) ||
                     (item.tags && item.tags.some(tag => tag.toLowerCase().includes(query)))
                 );
                 
+                console.log('Found', results.length, 'results');
                 displayResults(results);
             });
             

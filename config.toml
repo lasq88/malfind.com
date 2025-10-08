@@ -76,6 +76,12 @@ theme = 'PaperMod'
 [build]
   writeStats = true
 
+# Output formats for search
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+
 # Markup configuration
 [markup]
   [markup.highlight]
