@@ -40,6 +40,23 @@
     color: #374151 !important;
 }
 
+/* Dark theme overrides with higher specificity */
+.dark body {
+    color: #e5e7eb !important;
+}
+
+.dark p {
+    color: #e5e7eb !important;
+}
+
+.dark li {
+    color: #e5e7eb !important;
+}
+
+.dark span {
+    color: #e5e7eb !important;
+}
+
 :not(.dark) .prose h1, 
 :not(.dark) .prose h2, 
 :not(.dark) .prose h3, 
