@@ -1,0 +1,19 @@
+<footer class="footer">
+    <div class="footer_inner wrap">
+        <div class="footer__content">
+            {{- if .Site.Copyright }}
+            <span>&copy; {{ now.Year }} {{ .Site.Copyright | safeHTML }}</span>
+            {{- end }}
+            {{- if .Site.Params.socialIcons }}
+            <div class="footer__social">
+                {{- range .Site.Params.socialIcons }}
+                <a href="{{ .url }}" target="_blank" rel="noopener noreferrer me" title="{{ .name | title }}">
+                    {{- partial "svg.html" . -}}
+                </a>
+                {{- end }}
+            </div>
+            {{- end }}
+        </div>
+    </div>
+</footer>
+

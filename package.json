@@ -1,0 +1,14 @@
+{
+  "name": "malfind-labs-blog",
+  "version": "1.0.0",
+  "description": "Malfind Labs - Malware Analysis and AI Research Blog",
+  "scripts": {
+    "dev": "hugo server -D",
+    "build": "hugo --gc --minify",
+    "clean": "hugo --gc"
+  },
+  "devDependencies": {
+    "hugo-extended": "latest"
+  }
+}
+

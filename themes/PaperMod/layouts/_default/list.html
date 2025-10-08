@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="post-list">
+    {{ if .Site.Params.homeInfoParams }}
+    <article class="first-entry home-info">
+        <header class="entry-header">
+            <h1>{{ .Site.Params.homeInfoParams.Title }}</h1>
+        </header>
+        <div class="entry-content">
+            <p>{{ .Site.Params.homeInfoParams.Content }}</p>
+        </div>
+    </article>
+    {{ end }}
+
+    {{ if .Site.Params.search }}
+    <div class="search">
+        <input type="text" id="search-input" placeholder="Search posts..." />
+        <div id="search-results"></div>
+    </div>
+    {{ end }}
+
+    <div class="posts">
+        {{- $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+        {{- $paginator := .Paginate $pages }}
+        {{- range $paginator.Pages }}
+        <article class="post-entry">
+            <header class="entry-header">
+                <h2>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+            </header>
+            <div class="entry-content">
+                <p>{{ .Summary }}</p>
+            </div>
+            <footer class="entry-footer">
+                <time>{{ .Date.Format "January 2, 2006" }}</time>
+                {{- if .Params.categories }}
+                <span class="categories">
+                    {{- range .Params.categories }}
+                    <a href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+                    {{- end }}
+                </span>
+                {{- end }}
+            </footer>
+        </article>
+        {{- end }}
+    </div>
+
+    {{- template "_internal/pagination.html" . }}
+</div>
+{{ end }}
+

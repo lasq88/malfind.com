@@ -1,0 +1,29 @@
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            {{- $label_text := (.Site.Params.nav.logoTitle | default .Site.Title) }}
+            {{- if .Site.Title }}
+                <a href="{{ "" | relLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
+                    {{- if .Site.Params.nav.logo }}
+                        <img src="{{ .Site.Params.nav.logo | relURL }}" alt="{{ $label_text }}" aria-label="logo"
+                            height="{{ .Site.Params.nav.logoHeight | default "32" }}"
+                            width="{{ .Site.Params.nav.logoWidth | default "32" }}">
+                    {{- else }}
+                        {{- $label_text -}}
+                    {{- end }}
+                </a>
+            {{- end }}
+        </div>
+        {{- $currentPage := . }}
+        <ul class="menu" id="menu" onmouseleave="hover_leave()">
+            {{- range .Site.Menus.main }}
+            <li>
+                <a href="{{ .URL }}" title="{{ .Title }}">
+                    <span class="nav-text">{{ .Name }}</span>
+                </a>
+            </li>
+            {{- end }}
+        </ul>
+    </nav>
+</header>
+

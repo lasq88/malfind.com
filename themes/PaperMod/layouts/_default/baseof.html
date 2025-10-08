@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "ltr" }}">
+    <head>
+    {{- partial "head.html" . -}}
+    </head>
+    <body class="
+        {{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
+        {{- print "list" -}}
+        {{- end -}}
+        {{- if eq site.Params.defaultTheme `dark` -}}
+        {{- print " dark" }}
+        {{- end -}}"
+        id="top"
+        data-header-desktop="{{ .Params.header.desktopMode | default site.Params.header.desktopMode | default "fixed" }}"
+        data-header-mobile="{{ .Params.header.mobileMode | default site.Params.header.mobileMode | default "fixed" }}"
+    >
+        {{- partialCached "header.html" . .Page -}}
+        <main class="main">
+            {{- block "main" . }}{{- end }}
+        </main>
+        {{- partialCached "footer.html" . .Type .Layout .Params.hideFooter -}}
+        {{- partialCached "extended_footer.html" . .Page -}}
+    </body>
+</html>
+

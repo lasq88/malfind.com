@@ -1,0 +1,93 @@
+baseURL = 'https://malfind.com/'
+languageCode = 'en-us'
+title = 'Malfind Labs'
+theme = 'PaperMod'
+
+[params]
+  env = 'production'
+  title = 'Malfind Labs'
+  description = 'Malware Analysis and AI Research Blog'
+  keywords = ['malware analysis', 'AI', 'cybersecurity', 'research']
+  author = 'Malfind Labs'
+  images = ['/logo.png']
+  
+  # Theme configuration
+  defaultTheme = 'dark'
+  disableThemeToggle = false
+  
+  # Home page configuration
+  homeInfoParams.Title = 'Malfind Labs'
+  homeInfoParams.Content = 'Exploring the intersection of malware analysis and artificial intelligence'
+  
+  # Social links
+  socialIcons = [
+    { name = 'github', url = 'https://github.com/malfind' }
+  ]
+  
+  # Search configuration
+  search = true
+  
+  # Code highlighting
+  code = true
+  codeFences = true
+  codeCopy = true
+  codeMaxLines = 50
+  codeLineNos = true
+  
+  # Post configuration
+  showReadingTime = true
+  showShareButtons = true
+  showPostNavLinks = true
+  showBreadCrumbs = true
+  showCodeCopyButtons = true
+  
+  # Menu configuration
+  [params.menu]
+    [[params.menu.main]]
+    identifier = 'home'
+    name = 'Home'
+    url = '/'
+    weight = 10
+    
+    [[params.menu.main]]
+    identifier = 'posts'
+    name = 'Posts'
+    url = '/posts/'
+    weight = 20
+    
+    [[params.menu.main]]
+    identifier = 'categories'
+    name = 'Categories'
+    url = '/categories/'
+    weight = 30
+    
+    [[params.menu.main]]
+    identifier = 'about'
+    name = 'About'
+    url = '/about/'
+    weight = 40
+
+# Taxonomies
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+# Build configuration
+[build]
+  writeStats = true
+
+# Markup configuration
+[markup]
+  [markup.highlight]
+    style = 'github-dark'
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    tabWidth = 2
+    anchorLineNos = true
+    lineAnchors = ''
+    hl_Lines = ''
+    hl_inline = false
+

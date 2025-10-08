@@ -1,0 +1,157 @@
+/* Dark theme styles for Malfind Labs */
+:root {
+  --theme: #1a1a1a;
+  --entry: #2d2d2d;
+  --primary: #00d4aa;
+  --secondary: #8b8b8b;
+  --tertiary: #4a4a4a;
+  --content: #e0e0e0;
+  --hljs-bg: #2d2d2d;
+  --code-bg: #1e1e1e;
+  --border: #404040;
+}
+
+.dark {
+  --theme: #1a1a1a;
+  --entry: #2d2d2d;
+  --primary: #00d4aa;
+  --secondary: #8b8b8b;
+  --tertiary: #4a4a4a;
+  --content: #e0e0e0;
+  --hljs-bg: #2d2d2d;
+  --code-bg: #1e1e1e;
+  --border: #404040;
+}
+
+body {
+  background-color: var(--theme);
+  color: var(--content);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+.header {
+  background-color: var(--entry);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.menu a {
+  color: var(--content);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--primary);
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.footer {
+  background-color: var(--entry);
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__social a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__social a:hover {
+  color: var(--primary);
+}
+
+/* Code blocks */
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+code {
+  background-color: var(--code-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+}
+
+/* Search styles */
+.search {
+  margin: 2rem 0;
+}
+
+.search input {
+  background-color: var(--entry);
+  border: 1px solid var(--border);
+  color: var(--content);
+  padding: 0.5rem;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .menu {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .footer__content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
