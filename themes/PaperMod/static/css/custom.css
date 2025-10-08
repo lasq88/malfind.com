@@ -48,6 +48,36 @@
     color: #374151 !important;
 }
 
+/* Ensure dark theme styles override light theme */
+.dark .prose {
+    color: #e5e7eb !important;
+}
+
+.dark .prose h1, 
+.dark .prose h2, 
+.dark .prose h3, 
+.dark .prose h4, 
+.dark .prose h5, 
+.dark .prose h6 {
+    color: #ffffff !important;
+}
+
+.dark .prose p {
+    color: #e5e7eb !important;
+}
+
+.dark .prose li {
+    color: #e5e7eb !important;
+}
+
+.dark .prose strong {
+    color: #ffffff !important;
+}
+
+.dark .prose em {
+    color: #e5e7eb !important;
+}
+
 .prose h1 {
     font-size: 2.25rem;
     margin-top: 2rem;
@@ -238,6 +268,55 @@ pre[class*="language-"] {
     color: #2563eb !important;
 }
 
+/* Ensure dark theme syntax highlighting overrides light theme */
+.dark .hljs {
+    background: #1f2937 !important;
+    color: #e5e7eb !important;
+}
+
+.dark .hljs-comment,
+.dark .hljs-quote {
+    color: #6a9955 !important;
+}
+
+.dark .hljs-variable,
+.dark .hljs-template-variable,
+.dark .hljs-attribute,
+.dark .hljs-tag,
+.dark .hljs-name,
+.dark .hljs-regexp,
+.dark .hljs-link,
+.dark .hljs-selector-id,
+.dark .hljs-selector-class {
+    color: #f44747 !important;
+}
+
+.dark .hljs-number,
+.dark .hljs-meta,
+.dark .hljs-built_in,
+.dark .hljs-builtin-name,
+.dark .hljs-literal,
+.dark .hljs-type,
+.dark .hljs-params {
+    color: #b5cea8 !important;
+}
+
+.dark .hljs-string,
+.dark .hljs-symbol,
+.dark .hljs-bullet {
+    color: #ce9178 !important;
+}
+
+.dark .hljs-title,
+.dark .hljs-section {
+    color: #dcdcaa !important;
+}
+
+.dark .hljs-keyword,
+.dark .hljs-selector-tag {
+    color: #569cd6 !important;
+}
+
 /* Additional Hugo syntax highlighting classes */
 .chroma {
     background: #1f2937 !important;
@@ -347,6 +426,81 @@ pre[class*="language-"] {
 :not(.dark) .chroma .mo, 
 :not(.dark) .chroma .mx {
     color: #059669 !important;
+}
+
+/* Ensure dark theme chroma overrides light theme */
+.dark .chroma {
+    background: #1f2937 !important;
+    color: #e5e7eb !important;
+}
+
+.dark .chroma .c, 
+.dark .chroma .cm, 
+.dark .chroma .c1, 
+.dark .chroma .cs {
+    color: #6a9955 !important;
+}
+
+.dark .chroma .k, 
+.dark .chroma .kc, 
+.dark .chroma .kd, 
+.dark .chroma .kn, 
+.dark .chroma .kp, 
+.dark .chroma .kr, 
+.dark .chroma .kt {
+    color: #569cd6 !important;
+}
+
+.dark .chroma .s, 
+.dark .chroma .sa, 
+.dark .chroma .sb, 
+.dark .chroma .sc, 
+.dark .chroma .dl, 
+.dark .chroma .sd, 
+.dark .chroma .s2, 
+.dark .chroma .se, 
+.dark .chroma .sh, 
+.dark .chroma .si, 
+.dark .chroma .sx, 
+.dark .chroma .sr, 
+.dark .chroma .s1, 
+.dark .chroma .ss {
+    color: #ce9178 !important;
+}
+
+.dark .chroma .n, 
+.dark .chroma .na, 
+.dark .chroma .nb, 
+.dark .chroma .bp, 
+.dark .chroma .nc, 
+.dark .chroma .no, 
+.dark .chroma .nd, 
+.dark .chroma .ni, 
+.dark .chroma .ne, 
+.dark .chroma .nf, 
+.dark .chroma .fm, 
+.dark .chroma .nl, 
+.dark .chroma .nn, 
+.dark .chroma .nx, 
+.dark .chroma .py, 
+.dark .chroma .nt, 
+.dark .chroma .nv, 
+.dark .chroma .vc, 
+.dark .chroma .vg, 
+.dark .chroma .vi, 
+.dark .chroma .vm {
+    color: #9cdcfe !important;
+}
+
+.dark .chroma .m, 
+.dark .chroma .mb, 
+.dark .chroma .mf, 
+.dark .chroma .mh, 
+.dark .chroma .mi, 
+.dark .chroma .il, 
+.dark .chroma .mo, 
+.dark .chroma .mx {
+    color: #b5cea8 !important;
 }
 
 .prose blockquote {
